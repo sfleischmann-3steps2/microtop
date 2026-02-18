@@ -115,6 +115,7 @@ def run_build_page(
 
     page = notion.pages.create(
         parent={"page_id": PARENT_PAGE_ID},
+        icon={"type": "emoji", "emoji": "💧"},
         properties={"title": [{"text": {"content": title}}]},
         children=first_batch,
     )
