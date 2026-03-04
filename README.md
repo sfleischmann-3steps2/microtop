@@ -1,105 +1,95 @@
-# MICROTOP TW — Produktvergleich Trinkwasserbeschichtungen
+# MICROTOP TW — Landing Page & Produktvergleich
 
-Automatisierte Vergleichsseite in Notion für die 8 MICROTOP TW Produkte (Trinkwasser-Beschichtungsmörtel) von KORODUR.
+Marketing-Projekt fuer die MICROTOP TW Produktfamilie (Trinkwasser-Beschichtungsmoertel) von KORODUR.
 
-## Was macht dieses Projekt?
+## Live Landing Page
 
-1. **PDF-Parsing**: Extrahiert technische Daten aus 6 Produktdatenblättern (8 Produkte)
-2. **Notion-DB-Update**: Schreibt fehlende Properties in die bestehende Produktdatenbank
-3. **Vergleichsseite**: Erstellt eine vertriebsorientierte Übersichtsseite in Notion
+**https://sfleischmann-3steps2.github.io/microtop/landing-page/**
 
-## Produkte
-
-| Produkt | Körnung | Verfahren | PDF |
-|---------|---------|-----------|-----|
-| MICROTOP TW 3 | 0 – 3 mm | Trockenspritzen | TW_3_5_8 |
-| MICROTOP TW 5 | 0 – 5 mm | Trockenspritzen | TW_3_5_8 |
-| MICROTOP TW 8 | 0 – 8 mm | Trockenspritzen | TW_3_5_8 |
-| MICROTOP TW NSM | 0 – 3 mm | Nassspritzen | NSM |
-| MICROTOP TW BM | 0 – 1 mm | Schleudern/Spritzen/Hand | BM |
-| MICROTOP TW VSM | 0 – 2 mm | Spritzen/Hand | VSM |
-| MICROTOP TW Mineral | flüssig | Pinsel/Sprühen | Mineral |
-| MICROTOP TW 02 | 0 – 0,2 mm | Spritzen/Spachteln | 02 |
-
-## Setup
-
-```bash
-# Python-Abhängigkeiten installieren
-pip install -r requirements.txt
-
-# .env anlegen mit Notion-Token
-echo "NOTION_TOKEN=secret_..." > .env
-```
-
-## Verwendung
-
-```bash
-# PDFs parsen + fehlende Notion-DB-Properties updaten
-python -m src --extract
-
-# Vergleichsseite in Notion erstellen
-python -m src --build-page
-
-# Beides zusammen
-python -m src --all
-
-# Preview ohne Notion-Writes (JSON-Dump nach data/page_blocks.json)
-python -m src --dry-run --all
-
-# Debug-Logging
-python -m src --all -v
-```
+Standalone HTML-Landingpage im KORODUR Corporate Design (ARM-Style) mit:
+- 6 Referenzprojekte mit Bildern von korodur.de
+- Dreifach-Vergleich (Mineralisch vs. Epoxid vs. Edelstahl)
+- Produktfinder mit 8 DVGW-zugelassenen Produkten
+- Responsive Design (Mobile, Tablet, Desktop)
+- Schema.org Markup (Product, FAQPage, Organization)
 
 ## Projektstruktur
 
 ```
 microtop/
-├── src/
-│   ├── main.py             # Orchestrator, CLI
-│   ├── config.py            # Notion-IDs, Produkt-Mappings
-│   ├── models.py            # MicroTopProduct Dataclass
-│   ├── pdf_parser.py        # PDF-Extraktion (PyMuPDF)
-│   ├── notion_reader.py     # Bestehende Daten aus Notion-DB lesen
-│   ├── notion_updater.py    # Fehlende Properties in Notion-DB schreiben
-│   └── page_builder.py      # Vergleichsseite als Notion-Blocks
-├── data/
-│   └── pdfs/                # 6 Produktdatenblätter (PDF)
+├── landing-page/
+│   ├── index.html               # Landing Page (Single-File, inline CSS+JS)
+│   ├── img/                     # Bilder (Logo, Hero, Referenzen, Verfahren, Berater)
+│   ├── 01-strategie-analyse.md  # Strategisches Konzept
+│   ├── 02-seo-analyse.md        # Keywords, Meta-Tags, Schema Markup
+│   ├── 03-content-texte.md      # Alle Texte
+│   ├── 04-cro-analyse.md        # CRO-Analyse (7 Punkte)
+│   ├── 05-umsetzungskonzept.md  # Technische Spezifikation
+│   └── 06-redesign-plan.md      # ARM Corporate Design Angleichung
+├── src/                         # Notion Comparison Page Builder (Python)
+│   ├── main.py, config.py, models.py
+│   ├── pdf_parser.py, notion_reader.py
+│   ├── notion_updater.py, page_builder.py
+├── data/pdfs/                   # 6 Produktdatenblaetter (PDF)
 ├── requirements.txt
-├── .env                     # NOTION_TOKEN (nicht im Repo)
-└── .gitignore
+└── .env                         # NOTION_TOKEN (nicht im Repo)
 ```
 
-## Seitenlayout (v2)
+## Produkte
 
-Die generierte Notion-Seite enthält:
+| Produkt | Koernung | Verfahren |
+|---------|----------|-----------|
+| MICROTOP TW 3 | 0 – 3 mm | Trockenspritzen |
+| MICROTOP TW 5 | 0 – 5 mm | Trockenspritzen |
+| MICROTOP TW 8 | 0 – 8 mm | Trockenspritzen |
+| MICROTOP TW NSM | 0 – 3 mm | Nassspritzen |
+| MICROTOP TW BM | 0 – 1 mm | Schleudern/Spritzen/Hand |
+| MICROTOP TW VSM | 0 – 2 mm | Spritzen/Hand |
+| MICROTOP TW Mineral | fluessig | Pinsel/Spruehen |
+| MICROTOP TW 02 | 0 – 0,2 mm | Spritzen/Spachteln |
 
-1. **Hero** — Bild-Platzhalter + blauer Callout (Produktfamilie)
-2. **"Das kennen Sie"** — Problem-Statement (orange)
-3. **"Die Lösung"** — Solution-Statement (grün)
-4. **Entscheidungstabelle** — Bedarf / Produkt / Schichtdicke / Verfahren
-5. **Körnungsvarianten** — TW 3 · TW 5 · TW 8 Vergleich
-6. **Spezialverfahren** — TW NSM · TW BM · TW VSM Vergleich
-7. **Spezialprodukte** — TW Mineral · TW 02 Vergleich
-8. **DVGW-Zulassungen** — Qualitätsmerkmal
-9. **Gesamtübersicht** — 2 Toggle-Tabellen (Spritz-Mörtel + Spezialprodukte)
-10. **Leistungsmerkmale** — Bullet-Liste
-11. **Normen & Regelwerke**
-12. **Produkte** — Page-Mentions zu allen 8 DB-Einträgen
-13. **CTA** — Kontakt-Callout
-14. **Footer** — Zementhinweis, Stand, Datenquelle
+## Referenzen auf der Landing Page
+
+| Projekt | Volumen | Link |
+|---------|---------|------|
+| Hochbehaelter Haidberg | 75.000 m3 | [korodur.de](https://www.korodur.de/referenzen/sanierung-trinkwasser-hochbehalter-haidberg/) |
+| Hochbehaelter Krottenbach Nuernberg | 10.000 m3 | [korodur.de](https://www.korodur.de/referenzen/hochbehalter-krottenbach-nurnberg/) |
+| Hochbehaelter Raecknitz Dresden | 60.000 m3 | [korodur.de](https://www.korodur.de/referenzen/hochbehalter-racknitz/) |
+| Trinkwasserbehaelter Bad Nauheim | 3.000 m2 | [korodur.de](https://www.korodur.de/referenzen/trinkwasserbehalter-bad-nauheim/) |
+| Trinkwasserbehaelter Puchheim | 30.000 m3 | [korodur.de](https://www.korodur.de/referenzen/hochbehalter-puchheim/) |
+| Trinkwasserturm Budapest | 3.000 m3 | [korodur.de](https://www.korodur.de/referenzen/trinkwasserturm-budapest/) |
+
+## Status
+
+### Erledigt
+- [x] Strategie-Analyse, SEO-Analyse, Content-Texte, CRO-Analyse, Umsetzungskonzept
+- [x] Landing Page v1 (Standalone HTML)
+- [x] Landing Page v2 (ARM Corporate Design Angleichung)
+- [x] 6 Referenzprojekte mit Bildern von korodur.de integriert
+- [x] 3 Verfahren-Bilder (Nassspritzen, Trockenspritzen, Manuell/Schleudern)
+- [x] KORODUR Logo + Header-Bild eingebaut
+- [x] CTA aufgeteilt: Benjamin Lorenz (Technik) + KORODUR Zentrale (Allgemein)
+- [x] GitHub Pages live
+- [x] Notion Comparison Page Builder (PDF-Parsing, DB-Update, Vergleichsseite)
+
+### Offen
+- [ ] Kollegen-Review der Landing Page
+- [ ] Produktnamen in Produktfinder mit Datenblaettern verlinken
+- [ ] Ggf. bessere Verfahren-Bilder vom Kunden
+- [ ] Ggf. Header-Logo als SVG (aktuell PNG)
+- [ ] Kundenzitat / Testimonial einholen
+- [ ] Google Analytics / Tracking einrichten
 
 ## Notion-IDs
 
 - **Produktdatenbank**: `2ec670e1-9e1a-8110-8100-c85e74a74750`
-- **Parent Page** (Produktkatalog): `309670e1-9e1a-80da-80b7-cd881f017bef`
-- **Vergleichsseite** (v2): `30b670e1-9e1a-81e9-8d65-e21d36378a5a`
+- **Parent Page**: `309670e1-9e1a-80da-80b7-cd881f017bef`
+- **Vergleichsseite**: `30b670e1-9e1a-81e9-8d65-e21d36378a5a`
 
-## Status
+## Setup (Notion Page Builder)
 
-- [x] PDF-Parsing aller 8 Produkte
-- [x] Notion-DB-Update (10 Properties)
-- [x] Vergleichsseite v2 live
-- [x] Bild-Platzhalter eingefügt (3x 📷)
-- [ ] Kollegen-Review / Feedback
-- [ ] Bilder manuell einfügen
-- [ ] Ggf. Layout-Anpassungen nach Feedback
+```bash
+pip install -r requirements.txt
+echo "NOTION_TOKEN=secret_..." > .env
+python -m src --all
+```
