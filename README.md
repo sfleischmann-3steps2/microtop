@@ -64,6 +64,7 @@ microtop/
 - [x] Landing Page v2 (ARM Corporate Design Angleichung)
 - [x] 6 Referenzprojekte mit Bildern von korodur.de integriert
 - [x] Landing Page v3: Kollegen-Review eingearbeitet (3 Wiedemann-Referenzen entfernt, Key Figures, Fettdruck DVGW/W300/W347, Headline angepasst)
+- [x] Produktfinder: Alle 8 Produktnamen mit Datenblatt-PDFs auf korodur.de verlinkt
 - [x] 3 Verfahren-Bilder (Nassspritzen, Trockenspritzen, Manuell/Schleudern)
 - [x] KORODUR Logo + Header-Bild eingebaut
 - [x] CTA aufgeteilt: Benjamin Lorenz (Technik) + KORODUR Zentrale (Allgemein)
@@ -71,10 +72,7 @@ microtop/
 - [x] Notion Comparison Page Builder (PDF-Parsing, DB-Update, Vergleichsseite)
 
 ### Offen
-- [ ] Produktnamen in Produktfinder mit Datenblaettern verlinken
-- [ ] Ggf. bessere Verfahren-Bilder vom Kunden
 - [ ] Ggf. Header-Logo als SVG (aktuell PNG)
-- [ ] Kundenzitat / Testimonial einholen
 - [ ] Google Analytics / Tracking einrichten
 
 ## Notion-IDs
