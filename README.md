@@ -7,7 +7,7 @@ Marketing-Projekt fuer die MICROTOP TW Produktfamilie (Trinkwasser-Beschichtungs
 **https://sfleischmann-3steps2.github.io/microtop/landing-page/**
 
 Standalone HTML-Landingpage im KORODUR Corporate Design (ARM-Style) mit:
-- 6 Referenzprojekte mit Bildern von korodur.de
+- 3 Referenzprojekte mit Bildern von korodur.de
 - Dreifach-Vergleich (Mineralisch vs. Epoxid vs. Edelstahl)
 - Produktfinder mit 8 DVGW-zugelassenen Produkten
 - Responsive Design (Mobile, Tablet, Desktop)
@@ -54,9 +54,6 @@ microtop/
 |---------|---------|------|
 | Hochbehaelter Haidberg | 75.000 m3 | [korodur.de](https://www.korodur.de/referenzen/sanierung-trinkwasser-hochbehalter-haidberg/) |
 | Hochbehaelter Krottenbach Nuernberg | 10.000 m3 | [korodur.de](https://www.korodur.de/referenzen/hochbehalter-krottenbach-nurnberg/) |
-| Hochbehaelter Raecknitz Dresden | 60.000 m3 | [korodur.de](https://www.korodur.de/referenzen/hochbehalter-racknitz/) |
-| Trinkwasserbehaelter Bad Nauheim | 3.000 m2 | [korodur.de](https://www.korodur.de/referenzen/trinkwasserbehalter-bad-nauheim/) |
-| Trinkwasserbehaelter Puchheim | 30.000 m3 | [korodur.de](https://www.korodur.de/referenzen/hochbehalter-puchheim/) |
 | Trinkwasserturm Budapest | 3.000 m3 | [korodur.de](https://www.korodur.de/referenzen/trinkwasserturm-budapest/) |
 
 ## Status
@@ -66,6 +63,7 @@ microtop/
 - [x] Landing Page v1 (Standalone HTML)
 - [x] Landing Page v2 (ARM Corporate Design Angleichung)
 - [x] 6 Referenzprojekte mit Bildern von korodur.de integriert
+- [x] Landing Page v3: Kollegen-Review eingearbeitet (3 Wiedemann-Referenzen entfernt, Key Figures, Fettdruck DVGW/W300/W347, Headline angepasst)
 - [x] 3 Verfahren-Bilder (Nassspritzen, Trockenspritzen, Manuell/Schleudern)
 - [x] KORODUR Logo + Header-Bild eingebaut
 - [x] CTA aufgeteilt: Benjamin Lorenz (Technik) + KORODUR Zentrale (Allgemein)
@@ -73,7 +71,6 @@ microtop/
 - [x] Notion Comparison Page Builder (PDF-Parsing, DB-Update, Vergleichsseite)
 
 ### Offen
-- [ ] Kollegen-Review der Landing Page
 - [ ] Produktnamen in Produktfinder mit Datenblaettern verlinken
 - [ ] Ggf. bessere Verfahren-Bilder vom Kunden
 - [ ] Ggf. Header-Logo als SVG (aktuell PNG)
