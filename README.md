@@ -71,9 +71,9 @@ microtop/
 - [x] GitHub Pages live
 - [x] Notion Comparison Page Builder (PDF-Parsing, DB-Update, Vergleichsseite)
 
-### Offen
+### Backlog
+- [ ] Google Analytics / Tracking einrichten (Measurement ID muss erst angelegt werden)
 - [ ] Ggf. Header-Logo als SVG (aktuell PNG)
-- [ ] Google Analytics / Tracking einrichten
 
 ## Notion-IDs
 
